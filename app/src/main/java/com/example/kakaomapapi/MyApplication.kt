@@ -11,16 +11,7 @@ class MyApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-//        Timber.plant(FileLogTree(this))
-//        FileLogger.writeFile(this)
-//        initFlurry()
-    }
-
-    private fun initFlurry() {
-        FlurryAgent.Builder()
-            .withLogLevel(Log.VERBOSE)
-            .withLogEnabled(true)
-            .build(this, getString(R.string.FLURRY_API_KEY))
+        Timber.plant(Timber.DebugTree())
     }
 
 }

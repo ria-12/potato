@@ -6,6 +6,15 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.0"
 
+    signingConfigs {
+        release {
+            storeFile file("C:\\Users\\krinjoys\\Documents\\AndroidStudio\\keystore\\vr")//키스토어 파일경로
+            storePassword "potato" // 키스토어 패스워드
+            keyAlias "potatokey" // 키 이름
+            keyPassword "potato" // 키 패스워드
+        }
+    }
+
     defaultConfig {
         applicationId "com.example.kakaomapapi"
         minSdkVersion 16
