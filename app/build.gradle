@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.0"
 
     signingConfigs {
-        release {
+        debug {
             storeFile file("C:\\Users\\krinjoys\\Documents\\AndroidStudio\\keystore\\vr")//키스토어 파일경로
             storePassword "potato" // 키스토어 패스워드
             keyAlias "potatokey" // 키 이름
