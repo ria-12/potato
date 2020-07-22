@@ -52,7 +52,6 @@ dependencies {
 
     //kakao map
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation files('libs/libDaumMapAndroid.jar')
 
     //Timber
     implementation "com.jakewharton.timber:timber:4.7.0"
