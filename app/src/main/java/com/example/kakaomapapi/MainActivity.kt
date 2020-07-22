@@ -3,11 +3,9 @@ package com.example.kakaomapapi
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import net.daum.mf.map.api.MapView
 import timber.log.Timber
 
 
@@ -21,9 +19,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val mapView = MapView(this)
-        val mapViewContainer = findViewById<ViewGroup>(R.id.map_view)
-        mapViewContainer.addView(mapView)
     }
 
     private fun init() {

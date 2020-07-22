@@ -2,16 +2,21 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.0"
 
     signingConfigs {
         release {
-            storeFile file("C:\\Users\\krinjoys\\Documents\\AndroidStudio\\keystore\\vr")//키스토어 파일경로
-            storePassword "potato" // 키스토어 패스워드
-            keyAlias "potatokey" // 키 이름
-            keyPassword "potato" // 키 패스워드
+            storeFile file(RELEASE_STORE_FILE)
+            storePassword RELEASE_STORE_PASSWORD
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
+
+            // Optional, specify signing versions used
+            v1SigningEnabled true
+            v2SigningEnabled true
         }
     }
 
@@ -29,6 +34,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.release
         }
     }
 }
@@ -43,7 +52,6 @@ dependencies {
 
     //kakao map
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation files('libs/libDaumMapAndroid.jar')
 
     //Timber
     implementation "com.jakewharton.timber:timber:4.7.0"
